@@ -1,0 +1,45 @@
+<div class="step">
+<!--  <button-->
+<!--    (click)="navigateBack()"-->
+<!--    class="step__back-btn back-btn"-->
+<!--    color="primary"-->
+<!--    mat-raised-button>-->
+<!--    <mat-icon class="back-btn__icon">arrow_back</mat-icon>-->
+<!--  </button>-->
+  <app-back-btn class="step__back-btn"></app-back-btn>
+  <h1 class="step__title">Загрузка файла</h1>
+  <form (ngSubmit)="submit()" class="form">
+    <label class="file-upload">
+      <input #fileUpload
+             (change)="upload($event)"
+             accept="application/pdf"
+             class="file-upload__input"
+             type="file"
+      >
+      <span class="file-upload__text">
+        {{file?.name || "Загрузите документ (PDF)"}}
+      </span>
+      <button
+        (click)="fileUpload.click()"
+        class="file-upload__btn"
+        color="primary"
+        mat-mini-fab
+        type="button"
+      >
+        <mat-icon>attach_file</mat-icon>
+      </button>
+    </label>
+    <mat-error *ngIf="isPdf === false">
+      Принимается только PDF-формат
+    </mat-error>
+
+    <button
+      [disabled]="!isPdf"
+      class="form__submit"
+      color="primary"
+      mat-raised-button
+      type="submit"
+    >Подтвердить
+    </button>
+  </form>
+</div>

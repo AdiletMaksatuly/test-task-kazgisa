@@ -1,0 +1,33 @@
+<div class="step">
+  <app-back-btn class="step__back-btn"></app-back-btn>
+
+  <h1 class="step__title">Почта</h1>
+  <form
+    [formGroup]="form"
+    class="form"
+    (ngSubmit)="submit()"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput type='text'/>
+
+      <mat-error *ngIf="form.get('email')?.hasError('required')">
+        Это поле обязательно!
+      </mat-error>
+      <mat-error *ngIf="form.get('email')?.hasError('email')">
+        Введите корректный email
+      </mat-error>
+      <mat-error *ngIf="form.get('email')?.hasError('maxlength')">
+        Макс. кол. символов - 255
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      class="form__submit"
+      color="primary"
+      mat-raised-button
+      type="submit"
+    >Подтвердить
+    </button>
+  </form>
+</div>
