@@ -1,27 +1,28 @@
-# TestTaskKazgisa
+# Приложение 3-х этапная форма в виде анкеты
+Данное приложение является тестовым заданием (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+## Как собрать проект
+1. Необходимо склонировать гит-репозиторий
 
-## Development server
+`git clone https://github.com/AdiletMaksatuly/test-task-kazgisa.git`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Установить все необходимые зависимости
 
-## Code scaffolding
+`npm i`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Запустить проект в режиме разработки
 
-## Build
+`ng serve`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. Открыть в браузере
 
-## Running unit tests
+`http://localhost:4200/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Требования к тестовому заданию:
+Требуется создать три компонента и связать их в древе навигации приложения с помошью роутинга. В каждом из компонентов создать кнопки для навигации и форму для ввода полей требуемых типов, руководствуясь требованиями к полям из прошлой задачи. При навигации на следующий компонент нужно проверить валидацию каждого из полей формы и при провале валидации блокировать навигацию, при этом отобразив окно с текстом ошибки. Также значения полей должны сохраняться при навигации между компонентами.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Требования:
+1) В первом компоненте нужно создать форму с полями для ввода личных данных клиента. В зависимости от типа лица клиента отображать разные поля. Для этого следует отображать разные поля при выборе другой радиокнопки: физических лиц следует установить значение true, а для юридических - false. Также нужно задать значение поля типа клиента с радиокнопками по умолчанию как true. Для полей с ИИН и БИН установить ограничение для значения в 12 символов и строгий ввод цифр.
+2) Во втором компоненте создать поле с обязательной загрузкой файлов только формата PDF.
+3) В третьем компоненте создать поле с вводом электронной почты и при успешной валидации поля вывести модальное окно с успешным заполнением всех данных.
